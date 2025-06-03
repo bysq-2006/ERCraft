@@ -1,4 +1,7 @@
 import { GridManager, ForceLayout, erEvent, Refresh } from "../frame/render.js";
+import { RelationRenderer } from './list/relationEdity.js'
+import { EntityRenderer } from './list/entitEdity.js'
+
 
 //关于list的页面控制
 const entity = document.querySelector('body > div.FunctionalArea > div.edit > div.eredit > div.contron > div.one.block > button.entity');
@@ -90,6 +93,9 @@ function importFromJsonFile(callback) {
 
         // 然后再执行初始化
         Refresh();
+
+        RelationRenderer.renderRelations();
+        EntityRenderer.renderEntities();
       } catch (error) {
         console.error('JSON解析失败:', error);
         showTemporaryMessage('无效的JSON文件格式');
@@ -103,8 +109,6 @@ function importFromJsonFile(callback) {
   document.body.appendChild(fileInput);
   fileInput.click();
 }
-
-
 
 
 // 精细模式和网格模式的切换
@@ -138,13 +142,13 @@ const startBtn = document.querySelector('body > div.FunctionalArea > div.edit > 
 function checkDuplicateEntities() {
   const entityNames = erDiagram.entities.map(entity => entity.name);
   const duplicates = [];
-  
+
   entityNames.forEach((name, index) => {
     if (entityNames.indexOf(name) !== index && !duplicates.includes(name)) {
       duplicates.push(name);
     }
   });
-  
+
   return duplicates;
 }
 
@@ -153,13 +157,13 @@ function checkDuplicateEntities() {
 function checkDuplicateRelationships() {
   const relationshipNames = erDiagram.relationships.map(relationship => relationship.name);
   const duplicates = [];
-  
+
   relationshipNames.forEach((name, index) => {
     if (relationshipNames.indexOf(name) !== index && !duplicates.includes(name)) {
       duplicates.push(name);
     }
   });
-  
+
   return duplicates;
 }
 
@@ -256,31 +260,31 @@ function showCanvasModal() {
 
   // 添加到页面
   document.body.insertAdjacentHTML('beforeend', modalHTML);
-  
+
   const modal = document.querySelector('.canvas-modal');
   const confirmBtn = modal.querySelector('.confirm');
   const cancelBtn = modal.querySelector('.cancel');
-  
+
   // 确认按钮事件
   confirmBtn.addEventListener('click', () => {
     const width = parseInt(document.getElementById('canvas-width').value);
     const height = parseInt(document.getElementById('canvas-height').value);
-    
+
     if (width && height) {
       erDiagram.w = width;
       erDiagram.h = height;
       Refresh();
       showTemporaryMessage('画布尺寸已更新');
     }
-    
+
     document.body.removeChild(modal);
   });
-  
+
   // 取消按钮和背景点击事件
   cancelBtn.addEventListener('click', () => {
     document.body.removeChild(modal);
   });
-  
+
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       document.body.removeChild(modal);
