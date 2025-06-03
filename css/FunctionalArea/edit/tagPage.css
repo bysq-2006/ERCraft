@@ -1,0 +1,110 @@
+/* 标签页区域 - 顶部选项卡 */
+.FunctionalArea .edit .tagPage {
+  display: flex;
+  width: 100%;
+  height: 5.46%;
+}
+
+/* SQL解析标签样式 */
+.FunctionalArea .edit .tagPage .analysis {
+  border-radius: 2vh 2vh 0px 0px;
+  border-right: 1px solid #9C9C9C;
+  border-left: 1px solid #9C9C9C;
+  background: #f7f7f7;
+
+  width: 19.53vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SQL解析标签中的图标样式 */
+.FunctionalArea .edit .tagPage .analysis .icon-shiyongwendang {
+  fill: #595959;
+  font-size: 2.85vh;
+  transform: translateY(0.2vh);
+}
+
+/* SQL解析标签中的文本样式 */
+.FunctionalArea .edit .tagPage .analysis span {
+  color: #595959;
+  font-family: Inter;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: 400;
+  transform: translateY(-0.2vh);
+}
+
+/* 实体编辑标签样式 */
+.FunctionalArea .edit .tagPage .editor {
+  border-radius: 2vh 2vh 0px 0px;
+  border-right: 1px solid #9C9C9C;
+  border-left: 1px solid #9C9C9C;
+
+  width: 19.53vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 实体编辑标签中的图标样式 */
+.FunctionalArea .edit .tagPage .editor .icon-bianji {
+  font-size: 4vh;
+  color: #595959;
+}
+
+/* 实体编辑标签中的文本样式 */
+.FunctionalArea .edit .tagPage .editor span {
+  color: #595959;
+  font-family: Inter;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* ===== 标签页交互效果 ===== */
+
+/* 标签页鼠标指针样式设置 */
+.FunctionalArea .edit .tagPage .analysis,
+.FunctionalArea .edit .tagPage .editor {
+  cursor: pointer;
+  /* 鼠标变为手形指针 */
+  transition: all 0.4s ease;
+  /* 添加平滑过渡效果 */
+}
+
+/* SQL解析标签悬停效果 */
+.FunctionalArea .edit .tagPage .analysis:hover span,
+.FunctionalArea .edit .tagPage .analysis:hover .icon-shiyongwendang {
+  color: #4b87ff;
+  /* 悬停文字变蓝 */
+  fill: #4b87ff;
+  /* 图标也变蓝 */
+  transition: all 0.3s ease;
+  /* 添加平滑过渡效果 */
+}
+
+/* 实体编辑标签悬停效果 */
+.FunctionalArea .edit .tagPage .editor:hover span,
+.FunctionalArea .edit .tagPage .editor:hover .icon-bianji {
+  color: #4b87ff;
+  /* 悬停文字变蓝 */
+  transition: all 0.3s ease;
+  /* 添加平滑过渡效果 */
+}
+
+/* 被选中的标签页样式 */
+.FunctionalArea .edit .tagPage .select {
+  background-color: #FFFFFF;
+}
+
+.FunctionalArea .edit .tagPage .select>span {
+  color: #0057FF;
+}
+
+.FunctionalArea .edit .tagPage .select>div {
+  color: #0057FF;
+}

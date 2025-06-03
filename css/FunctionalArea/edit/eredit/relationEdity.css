@@ -1,0 +1,210 @@
+.FunctionalArea>.edit>.eredit>.list>.relationEdity {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-item {
+  margin: 1vh auto;
+  width: 98%;
+  border-radius: 1vh;
+  border: 1px solid #ccc;
+  background-color: #FAFAFA;
+  overflow: hidden;
+}
+
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head {
+  padding: 0.5vh 1vh;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 输入框 */
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head input {
+  flex: 1;
+  border: #ccc 1px solid;
+  min-width: 0;
+  border-radius: 0.5vh;
+  padding: 0.8vh;
+  margin: 0 1vh;
+
+  font-size: large;
+  color: #303030;
+}
+
+/* 两个按钮的效果 */
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head button {
+  font-family: Inter;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transform: translateY(-0.2vh);
+  margin: 0 0.5vh;
+  white-space: nowrap;
+  /* 添加浮动特效 */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head button:hover {
+  transform: translateY(-0.4vh) scale(1.02);
+}
+
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head button:active {
+  transform: translateY(-0.1vh) scale(0.98);
+}
+
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head .addattr {
+  color: #0080FF;
+}
+
+.FunctionalArea>.edit>.eredit>.list>.relationEdity .relation-head .remove {
+  color: #B70000;
+}
+
+/* 三角形图标样式 */
+.relationEdity .relation-head span:first-child {
+  color: #A7A7A7;
+  font-size: 2.3vh;
+  margin-left: 0.5vh;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+/* 展开时三角形旋转 */
+.relationEdity .relation-item.open .relation-head span:first-child {
+  transform: rotate(0deg);
+}
+
+/* 抽屉展开动画 */
+.relationEdity .relation-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.relationEdity .relation-item.open .relation-content {
+  max-height: 2000px;
+}
+
+.relationEdity .relation-content .content-wrapper {
+  padding: 1vh;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+  /* 延迟显示内容 */
+}
+
+.relationEdity .relation-item.open .relation-content .content-wrapper {
+  opacity: 1;
+}
+
+.relationEdity .relation-item .relation-content .attr {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.relationEdity .relation-item .relation-content input {
+  flex: 1;
+  min-width: 0;
+  border: #ccc 1px solid;
+  border-radius: 0.5vh;
+  padding: 0.8vh;
+  margin-right: 1vh;
+
+  font-size: large;
+  color: #303030;
+}
+
+.relationEdity .relation-item .relation-content .primary {
+  color: #FD0;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.6vh;
+  transform: translateY(-0.3vh);
+}
+
+.relationEdity .relation-item .relation-content .icon-empty {
+  font-size: 3vh;
+  color: #CB494B;
+  transform: translateY(-0.1vh);
+  /* 添加浮动特效 */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.relationEdity .relation-item .relation-content .icon-empty:hover {
+  transform: translateY(-0.3vh) scale(1.02);
+}
+
+.relationEdity .relation-item .relation-content .icon-empty:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 对应关系 */
+.relationEdity .relation-item .relation-content .map {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1vh;
+}
+
+.relationEdity .relation-content .map {
+  display: flex;
+  gap: 1vh;
+  margin-bottom: 2vh;
+  align-items: center;
+}
+
+.relationEdity .relation-content .map select {
+  flex: 1;
+  padding: 0.8vh 1vh;
+  border: 1px solid #ccc;
+  border-radius: 0.5vh;
+  font-size: 2vh;
+  color: #818181;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23666' d='M4.427 9.573L8 6.001l3.573 3.572.854-.853L8 4.293 3.573 8.72z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8vh center;
+  background-size: 3vh;
+  padding-right: 3vh;
+}
+
+.relationEdity .relation-content .map select:focus {
+  outline: none;
+  border-color: #0080FF;
+  box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.2);
+}
+
+.relationEdity .relation-content .map select:hover {
+  border-color: #999;
+}
+
+/* 下拉选项样式 */
+.relationEdity .relation-content .map select option {
+  padding: 0.5vh;
+  background-color: #fff;
+  color: #303030;
+}
+
+/* 加号 */
+.relationEdity .addrelation {
+  font-size: 3vh;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.4vh auto;
+  width: fit-content;
+  color: #A7A7A7;
+}

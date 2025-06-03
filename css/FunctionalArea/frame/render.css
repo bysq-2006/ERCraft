@@ -1,0 +1,5 @@
+/* 确保 canvas 不会超出容器 */
+.FunctionalArea .frame canvas {
+  display: block;
+  object-fit: contain;
+}

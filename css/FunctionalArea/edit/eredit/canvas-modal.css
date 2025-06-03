@@ -1,0 +1,89 @@
+/* 画布调整弹窗样式 */
+.canvas-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.canvas-modal-content {
+  background: #FFF;
+  border-radius: 1.2vh;
+  border: 1px solid #A3A3A3;
+  padding: 2vh;
+  width: 30vh;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.canvas-modal h3 {
+  color: #303030;
+  font-family: Inter;
+  font-size: 2.5vh;
+  margin-bottom: 1.5vh;
+  text-align: center;
+}
+
+.canvas-modal-input {
+  margin-bottom: 1vh;
+}
+
+.canvas-modal-input label {
+  color: #595959;
+  font-family: Inter;
+  font-size: 2vh;
+  display: block;
+  margin-bottom: 0.5vh;
+}
+
+.canvas-modal-input input {
+  width: 100%;
+  padding: 0.8vh;
+  border: 1px solid #A3A3A3;
+  border-radius: 0.58vh;
+  font-family: Inter;
+  font-size: 2vh;
+  color: #464646;
+}
+
+.canvas-modal-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1.5vh;
+}
+
+.canvas-modal button {
+  padding: 0.8vh 1.6vh;
+  border-radius: 0.58vh;
+  font-family: Inter;
+  font-size: 2vh;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.canvas-modal .confirm {
+  background: #409EFF;
+  color: #FFF;
+  border: 1px solid #409EFF;
+}
+
+.canvas-modal .confirm:hover {
+  background: #4ca9ff;
+}
+
+.canvas-modal .cancel {
+  background: #FFF;
+  color: #595959;
+  border: 1px solid #595959;
+}
+
+.canvas-modal .cancel:hover {
+  background: #EBF5FF;
+  color: #0057FF;
+  border-color: #0057FF;
+}

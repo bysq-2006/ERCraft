@@ -1,0 +1,7 @@
+/* 工作区 */
+.FunctionalArea {
+  width: 100vw;
+  flex: 1;
+  display: flex;
+}
+

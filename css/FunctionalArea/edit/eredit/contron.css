@@ -1,0 +1,188 @@
+.FunctionalArea .edit .eredit .contron {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+/* ---------------------公共样式----------------------- */
+/* 包裹按钮的块的 */
+.FunctionalArea .edit .eredit .contron .block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* 按钮的 */
+.FunctionalArea .edit .eredit .contron button {
+  margin-top: 1vh;
+  border-radius: 0.58vh;
+  border: 1px solid #595959;
+  display: flex;
+  padding: 0.36vh 1.6vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 字的 */
+.FunctionalArea .edit .eredit .contron button span {
+  color: #595959;
+  font-family: Inter;
+  font-size: 2.92vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transform: translateY(-0.2vh);
+}
+
+/* ---------------------------------------------------- */
+/* icon-daoru太大了，会把下面的按钮撑开，所以特殊调整padding */
+.FunctionalArea .edit .eredit .contron .export {
+  padding: 0.36vh 1.1vh;
+}
+
+/* 同上 */
+.FunctionalArea .edit .eredit .contron .two button {
+  padding: 0.36vh 1vh;
+}
+
+.FunctionalArea .edit .eredit .contron .three .save span {
+  transform: translateY(-0.2vh) translateX(0.3vh);
+}
+
+.FunctionalArea .edit .eredit .contron .three .icon-baocun {
+  font-size: 2.8vh;
+  color: #595959;
+  transform: translateY(0.1vh) translateX(-0.14vh);
+}
+
+.FunctionalArea .edit .eredit .contron .three .icon-daoru {
+  font-size: 3.8vh;
+  color: #595959;
+  transform: translateY(0.1vh) translateX(-0.1vh);
+}
+
+.FunctionalArea .edit .eredit .contron .three .icon-shangchuantupian {
+  font-size: 2.9vh;
+  color: #595959;
+  /* transform: translateY(0.1vh) translateX(-0.1vh); */
+}
+
+/* 实体编辑 前面的小点 */
+.FunctionalArea .edit .eredit .contron .dot {
+  display: inline-block;
+  width: 1.24vh;
+  height: 1.24vh;
+  border-radius: 50%;
+  margin-right: 0.73vh;
+  border: #595959 0.14vh solid;
+}
+
+.FunctionalArea .edit .eredit .contron .one .select {
+  background: #D8E9FF;
+}
+
+.FunctionalArea .edit .eredit .contron .one .select .dot {
+  background: #0057ff;
+  border: #0057ff 0.14vh solid;
+}
+
+.FunctionalArea .edit .eredit .contron .one .select span {
+  color: #0057ff;
+}
+
+/* 开关组件样式 */
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .switch {
+  font-size: 1vh;
+  position: relative;
+  display: inline-block;
+  width: 5.25em;
+  /* 这里控制开关的宽度 */
+  height: 3em;
+  /* 这里控制开关的高度 */
+  transform: translateY(0.1vh);
+  margin-left: 1vh;
+}
+
+/* 隐藏默认HTML复选框 */
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 滑块样式 */
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(182, 182, 182);
+  transition: .4s;
+  border-radius: 10px;
+}
+
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .slider:before {
+  font-size: 1vh;
+  position: absolute;
+  content: "";
+  height: 2.4em;
+  /* 这里控制滑块的高度 */
+  width: 2.4em;
+  /* 这里控制滑块的宽度 */
+  border-radius: 8px;
+  left: 0.3em;
+  bottom: 0.3em;
+  transform: rotate(270deg);
+  background-color: rgb(255, 255, 255);
+  transition: .4s;
+}
+
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .switch input:checked+.slider {
+  background-color: #21cc4c;
+}
+
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .switch input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+body>div.FunctionalArea>div.edit>div.eredit>div>div.two.block .switch input:checked+.slider:before {
+  font-size: 1vh;
+  transform: translateX(2.1em);
+}
+
+/* 下面是鼠标放在按钮上时的特效 */
+
+/* 通用按钮悬停效果 */
+.FunctionalArea .edit .eredit .contron button:hover:not(.gridmode):not(.finemode){
+  background-color: #EBF5FF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 通用按钮点击效果 */
+.FunctionalArea .edit .eredit .contron button:active:not(.gridmode):not(.finemode) {
+  background-color: #D8E9FF;
+  transform: scale(0.98);
+}
+
+/* 选中状态的按钮悬停效果（更深一点的蓝色） */
+.FunctionalArea .edit .eredit .contron .one .select:hover:not(.gridmode):not(.finemode) {
+  background-color: #C8E1FF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 通用按钮文字和图标在悬停时颜色变化 */
+.FunctionalArea .edit .eredit .contron button:hover:not(.gridmode):not(.finemode) span {
+  color: #0057FF;
+  transition: color 0.2s ease;
+}
+
+/* 按钮中的小圆点在悬停时的变化（非选中状态） */
+.FunctionalArea .edit .eredit .contron .one div:not(.select):hover .dot {
+  border-color: #0057FF;
+  transition: border-color 0.2s ease;
+}

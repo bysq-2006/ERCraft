@@ -1,0 +1,12 @@
+.FunctionalArea .edit .eredit {
+  border-left: 1px solid #9C9C9C;
+  background: #FFF;
+  transition: opacity 0.2s ease-in-out;
+
+  /* height: 88.3vh; */
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+}

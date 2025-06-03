@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>er图绘制</title>
+    <!-- icon图 -->
+    <link rel="stylesheet" href="./icon/iconfont.css">
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/tagPage.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/edit.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/frame/frame.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/frame/render.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/FunctionalArea.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/SQLinputbox.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/eredit/contron.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/eredit/list.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/eredit/eredit.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/eredit/entitEdity.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/eredit/relationEdity.css">
+    <link rel="stylesheet" href="./css/FunctionalArea/edit/eredit/canvas-modal.css">
+    <link rel="stylesheet" href="./css/body.css">
+  </head>
+
+  <body>
+    <div class="navigation">
+      <h1 class="head">ER-图绘制/sql转ER图</h1>
+      <div class="left">
+        <a href="#" class="github">
+          <div class="iconfont icon-github-fill"></div>
+        </a>
+        <a href="#">
+          <div class="iconfont icon-bilibili"></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="FunctionalArea">
+
+      <div class="edit">
+        <!-- 标签页 -->
+        <div class="tagPage">
+          <div class="analysis select">
+            <div class="iconfont icon-shiyongwendang"></div>
+            <span>sql解析</span>
+          </div>
+          <div class="editor">
+            <div class="iconfont icon-bianji"></div>
+            <span>数据编辑</span>
+          </div>
+        </div>
+        <!-- 实体编辑 -->
+        <div class="eredit" style="display: none;">
+          <div class="contron">
+            <div class="one block">
+              <button class="entity select">
+                <div class="dot"></div>
+                <span>实体编辑</span>
+              </button>
+              <button class="relation">
+                <div class="dot"></div>
+                <span>关系编辑</span>
+              </button>
+              <button class="start">
+                <span>-应用改变-</span>
+              </button>
+            </div>
+            <div class="two block">
+              <button class="finemode">
+                <span>精细模式</span>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+              </button>
+              <button class="gridmode">
+                <span>网格模式</span>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+              </button>
+              <button class="modify-canvas">
+                <span>---调整画布---</span>
+              </button>
+            </div>
+            <div class="three block">
+              <button class="save">
+                <div class="icon-baocun iconfont"></div>
+                <span>保存</span>
+              </button>
+              <button class="export">
+                <div class="icon-daoru iconfont"></div>
+                <span>导入</span>
+              </button>
+              <button class="img">
+                <div class="icon-shangchuantupian iconfont"></div>
+                <span>导出</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 实体 和 关系编辑 的表 -->
+          <div class="list">
+            <div class="SeekBar">
+              <div></div>
+              <div></div>
+            </div>
+
+            <!-- 实体编辑 -->
+            <div class="entitEdity">
+            </div>
+
+            <!-- 关系编辑 -->
+            <div class="relationEdity" style="display: none;">
+              <div class="relation-item">
+                <div class="relation-head">
+                  <span class="icon-xiala iconfont"></span>
+                  <input type="text">
+                  <button class="addattr">
+                    +属性
+                  </button>
+                  <button class="remove">
+                    -删除
+                  </button>
+                </div>
+                <div class="relation-content">
+                  <div class="content-wrapper">
+                    <div class="map">
+                      <select name="left">
+                        <option value="1">一对一</option>
+                        <option value="2">一对多</option>
+                        <option value="3">多对多</option>
+                      </select>
+                      <select name="corresponding">
+                        <option value="1">一对一</option>
+                        <option value="2">一对多</option>
+                        <option value="3">多对多</option>
+                      </select>
+                      <select name="right">
+                        <option value="1">一对一</option>
+                        <option value="2">一对多</option>
+                        <option value="3">多对多</option>
+                      </select>
+                    </div>
+                    <div class="attr">
+                      <input type="text">
+                      <span class="primary">主键</span>
+                      <span class="iconfont icon-empty"></span>
+                    </div>
+                    <div class="attr">
+                      <input type="text">
+                      <span class="iconfont icon-empty"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 输入框那一块 -->
+        <div class="SQLinputbox">
+          <div class="top">
+            <button class="start">
+              <span class="icon-ai23 iconfont"></span>
+              <span class="text">开始解析</span>
+            </button>
+            <button class="erase">
+              <span class="text">清空输入框</span>
+            </button>
+          </div>
+          <div class="bottom">
+            <textarea class="SQLinput" placeholder="请输入sql语句"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右边的画框和控制面板 -->
+      <div class="frame">
+      </div>
+    </div>
+
+    <script src="./js/pixi.js"></script>
+    <script src="./js/frame/render.js" type="module"></script>
+    <script src="./js/edit/contron.js" type="module"></script>
+    <script src="./js/showTemporaryMessage.js"></script>
+    <script src="./js/edit/list/relationEdity.js" type="module"></script>
+    <script src="./js/edit/list/entitEdity.js" type="module"></script>
+    <script src="./js/edit/list/list.js" type="module"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/edit/tagPage.js"></script>
+    <script src="./js/edit/SQLinputbox.js" type="module"></script>
+    <script src="./js/edit/ER-Editycss.js" type="module"></script>
+  </body>
+
+</html>

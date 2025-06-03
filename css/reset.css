@@ -1,0 +1,108 @@
+/* Reset CSS - 清除所有浏览器的默认样式 */
+
+/* 重置所有元素的盒模型 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 重置HTML和body的默认样式 */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -webkit-text-size-adjust: 100%; /* 防止iOS浏览器自动调整字体大小 */
+}
+
+/* 重置列表样式 */
+ol, ul, li {
+  list-style: none;
+}
+
+/* 重置表格样式 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 重置文本样式 */
+h1, h2, h3, h4, h5, h6, p {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* 重置超链接样式 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  outline: none;
+}
+
+/* 重置表单元素样式 */
+input, button, textarea, select {
+  font-family: inherit; /* 继承父元素字体 */
+  font-size: 100%; /* 使用父元素字体大小 */
+  line-height: 1.15; /* 添加合适的行高 */
+  margin: 0; /* 移除表单元素的默认边距 */
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 通过给定义媒体display从不让打印机打印背景 */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important; 
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* 移除图片的边框 */
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+  display: block; /* 避免底部多余的空白 */
+}
+
+/* 修复HTML5元素在IE中的显示问题 */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* 确保选中文本样式统一 */
+::selection {
+  background: rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+/* 移除引用元素的默认样式 */
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

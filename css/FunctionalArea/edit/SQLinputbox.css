@@ -1,0 +1,143 @@
+/* ===== SQL输入区域 ===== */
+.FunctionalArea .edit .SQLinputbox {
+  border-left: 1px solid #9C9C9C;
+  background: #FFF;
+  width: 100%;
+  flex: 1;
+  /* 占据剩余空间 */
+
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* 顶部按钮区域 */
+.FunctionalArea .edit .SQLinputbox .top {
+  width: 100%;
+  height: 7.46vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  /* 按钮靠右排列 */
+}
+
+/* 清空按钮样式 */
+.FunctionalArea .edit .SQLinputbox .top .erase {
+  border-radius: 10px;
+  border: 2px solid #409EFF;
+  width: 15.21vh;
+  height: 4.97vh;
+  margin-right: 1.75vh;
+}
+
+/* 清空按钮文本样式 */
+.FunctionalArea .edit .SQLinputbox .top .erase .text {
+  color: #409EFF;
+  font-size: 2.41vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transform: translateY(-0.15vh);
+  /* 微调文字位置 */
+}
+
+/* 开始解析按钮样式 */
+.FunctionalArea .edit .SQLinputbox .top .start {
+  border-radius: 10px;
+  background: #409EFF;
+  width: 15.21vh;
+  height: 4.97vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.75vh;
+}
+
+/* 开始解析按钮文本样式 */
+.FunctionalArea .edit .SQLinputbox .top .start .text {
+  color: #ffffff;
+  font-size: 2.41vh;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-0.15vh);
+  /* 微调文字位置 */
+}
+
+/* 开始解析按钮中的所有文本元素 */
+.FunctionalArea .edit .SQLinputbox .top .start span {
+  color: #ffffff;
+  font-size: 3.3vh;
+}
+
+/* SQL输入框主要区域 */
+.FunctionalArea .edit .SQLinputbox .bottom {
+  width: 100%;
+  flex: 1;
+  /* 占满剩余空间 */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.FunctionalArea .edit .SQLinputbox .bottom .SQLinput {
+  min-width: 49vh;
+  border-radius: 10px;
+  border: 1px solid #A3A3A3;
+  background: #FFF;
+  width: 30.4vw;
+  height: 80vh;
+
+  padding: 0.5vh;
+  color: #464646;
+  font-family: Inter;
+  font-size: 2vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  resize: none;
+}
+
+/* 清空输入框 和 开始解析按钮的交互效果 */
+
+/* 添加平滑过渡效果 */
+.FunctionalArea .edit .SQLinputbox .top button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 清空按钮悬停效果 */
+.FunctionalArea .edit .SQLinputbox .top .erase:hover {
+  background-color: rgba(64, 158, 255, 0.1);
+  border-color: #409EFF;
+}
+
+/* 清空按钮按下效果（按住时的状态） */
+.FunctionalArea .edit .SQLinputbox .top .erase:active {
+  background-color: rgba(64, 158, 255, 0.2);
+  transform: scale(0.98);
+  border-color: #3089e6;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 开始解析按钮悬停效果 */
+.FunctionalArea .edit .SQLinputbox .top .start:hover {
+  background-color: #4ca9ff;
+}
+
+/* 开始解析按钮按下效果（按住时的状态） */
+.FunctionalArea .edit .SQLinputbox .top .start:active {
+  background-color: #3089e6;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 确保文字在按钮变形时也能保持居中 */
+.FunctionalArea .edit .SQLinputbox .top .erase:active .text,
+.FunctionalArea .edit .SQLinputbox .top .start:active .text {
+  transform: translateY(-0.15vh) scale(1.02);
+}
