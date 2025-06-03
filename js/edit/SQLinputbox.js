@@ -1,4 +1,6 @@
 import { root, Transformation, containerConnector, ForceLayout, Refresh } from "../frame/render.js"
+import {RelationRenderer} from './list/relationEdity.js'
+import {EntityRenderer} from './list/entitEdity.js'
 
 
 // 这一个模块是处理输入框还有把输入框的内容转发到主程序上
@@ -45,6 +47,9 @@ start.addEventListener("click", function () {
     console.log("解析后的ER图数据:", erDiagram);
 
     Refresh(); // 刷新ER图显示
+
+    RelationRenderer.renderRelations();
+    EntityRenderer.renderEntities();
   } catch (error) {
     console.error("SQL解析错误:", error);
     showTemporaryMessage("SQL解析失败：");
