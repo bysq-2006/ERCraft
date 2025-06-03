@@ -1,6 +1,6 @@
 import { relationHeads } from '../ER-Editycss.js';
 
-const RelationRenderer = {
+export const RelationRenderer = {
   edit: document.querySelector('body > div.FunctionalArea > div.edit > div.eredit > div.list > div.relationEdity'),
 
   // 生成单个属性的HTML

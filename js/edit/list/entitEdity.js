@@ -1,6 +1,6 @@
 import { entityHeads } from '../ER-Editycss.js';
 
-const EntityRenderer = {
+export const EntityRenderer = {
   edit: document.querySelector('body > div.FunctionalArea > div.edit > div.eredit > div.list > div.entitEdity'),
 
   // 生成单个属性的HTML
