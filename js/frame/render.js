@@ -1162,6 +1162,8 @@ const Refresh = () => {
   root.getChildAt(0).width = erDiagram.w;
   root.getChildAt(0).height = erDiagram.h;
 
+  BoundaryManagement.init(); // 重新初始化边界管理
+
   // 清空根节点,除了第Rootcanvas元素
   while (root.children.length > 4) {
     root.removeChildAt(4);
